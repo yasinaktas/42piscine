@@ -10,6 +10,7 @@ typedef struct Square
 	int column;
 	int length;
 	int control_length;
+	char	in_loop;
 } square;
 
 void	ft_putchar(char ch)
@@ -110,6 +111,7 @@ struct Square	ft_create_square(char *str, char empty, int *length, int *coord)
 	square.column = coord[1];
 	square.length = 0;
 	square.control_length = 0;
+	square.in_loop = 'y';
 	ft_update_square(str,empty, length, &square);
 	return (square);
 }
@@ -141,7 +143,83 @@ struct	Square	*ft_get_squares(char *str, int *length, char empty, char obstacle)
 }
 
 #include <stdio.h>
-int	main(void)
+/*int main(int ac, char **av)
+{
+}*/
+
+struct Square	find_biggest_square(struct Square *squares)
+{
+	int	max;
+	int	index;
+
+	max = 0;
+	index = 0;
+	while (squares[index].in_loop)
+	{
+		if (squares[index].length > max)
+			max = squares[index].length;
+		index++;
+	}
+	index = 0;
+	while (squares[index].in_loop)
+	{
+		if (squares[index].length == max)
+			return (squares[index]);
+		index++;
+	}
+	return (squares[0]);
+}
+
+void	write_map(char *str, char full, struct Square square)
+{
+	int	index;
+	int	row;
+	int	column;
+
+	index = 0;
+	row = -1;
+	column = 0;
+	while (str[index])
+	{
+		if (row >= square.row && row < square.row + square.length)
+		{
+			if (column >= square.column && column < square.column + square.length)
+			ft_putchar(full);
+			else
+				ft_putchar(str[index]);
+		}
+		else
+			ft_putchar(str[index]);
+		column++;
+		if (str[index] == '\n')
+		{
+			row++;
+			column = 0;
+		}
+		index++;
+	}
+}
+
+void	handle_file(char *file_name)
+{
+	int	file_descriptor;
+	char	*buffer;
+
+	buffer = (char *)malloc(1024);
+	if (buffer == NULL)
+		return ;
+	file_descriptor = open(file_name, O_RDONLY);
+	// if fd < 1 --> Error
+	if (read(file_descriptor, buffer, 1024))
+		ft_putstr(buffer);
+
+	if (close(file_descriptor) < 0)
+		exit(1);
+}
+
+
+
+int	main(int ac, char **av)
 {
 	char *system = "9.ox\n...........................\n....o......................\n............o..............\n...........................\n....o......................\n...............o...........\n...........................\n......o..............o.....\n..o.......o................";
 
@@ -153,11 +231,15 @@ int	main(void)
 		return (0);
 	int length[2] = {9,27};
 	squares = ft_get_squares(system,length,'.','o');
-	while (index < 243)
+	/*while (index < 243)
 	{
 		printf("%d-%d-%d-%d\n",squares[index].row,squares[index].column,squares[index].length,squares[index].control_length);
 		index++;
-	}
+	}*/
+	struct Square square = find_biggest_square(squares);
+	write_map(system,'x',square);
+	ft_putchar('\n');
+	handle_file(av[1]);
 }
 
 
