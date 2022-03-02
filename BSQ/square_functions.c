@@ -2,7 +2,7 @@
 
 char    ft_get_char(char *str, int row, int column);
 
-int	ft_control_square(char *str, char empty, int *length, struct Square square)
+int	ft_control_square(char *str, char empty, struct Square square)
 {
 	int	index;
 
@@ -30,7 +30,7 @@ void	ft_update_square(char *str, char empty, int *length, struct Square *square)
 	while (square->row + sq_length < length[0] && square->column + sq_length < length[1])
 	{
 		square->control_length = sq_length;
-		if (ft_control_square(str, empty, length, *square))
+		if (ft_control_square(str, empty, *square))
 			square->length = sq_length;
 		sq_length++;
 	}
@@ -50,7 +50,7 @@ struct Square	ft_create_square(char *str, char empty, int *length, int *coord)
 }
 		
 
-struct	Square	*ft_get_squares(char *str, int *length, char empty, char obstacle)
+struct	Square	*ft_get_squares(char *str, int *length, char empty)
 {
 	int	index;
 	square	*squares;
