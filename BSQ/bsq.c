@@ -1,22 +1,23 @@
-#include <sys/types.h>
+/*#include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdlib.h>
+#include <stdlib.h>*/
 
-int	line_lengths(char *map);
+#include "ft_functions.h"
+
 int	errors(char *map);
 
-typedef struct Square
+/*typedef struct Square
 {
 	int row;
 	int column;
 	int length;
 	int control_length;
 	char	in_loop;
-} square;
+} square;*/
 
-void	ft_putchar(char ch)
+/*void	ft_putchar(char ch)
 {
 	write (1, &ch, 1);
 }
@@ -65,9 +66,9 @@ char	ft_get_char(char *str, int row, int column)
 		index++;
 	}
 	return ('\0');
-}
+}*/
 
-int	ft_control_square(char *str, char empty, int *length, struct Square square)
+/*int	ft_control_square(char *str, char empty, int *length, struct Square square)
 {
 	int	index;
 
@@ -97,8 +98,6 @@ void	ft_update_square(char *str, char empty, int *length, struct Square *square)
 		square->control_length = sq_length;
 		if (ft_control_square(str, empty, length, *square))
 			square->length = sq_length;
-		/*else
-			break;*/
 		sq_length++;
 	}
 }
@@ -107,9 +106,6 @@ struct Square	ft_create_square(char *str, char empty, int *length, int *coord)
 {
 	struct Square square;
 
-	//square = *(struct Square *)malloc(sizeof(struct Square) * 4);
-	/*if (square == NULL)
-		return (NULL);*/
 	square.row = coord[0];
 	square.column = coord[1];
 	square.length = 0;
@@ -145,11 +141,6 @@ struct	Square	*ft_get_squares(char *str, int *length, char empty, char obstacle)
 	return (squares);
 }
 
-#include <stdio.h>
-/*int main(int ac, char **av)
-{
-}*/
-
 struct Square	find_biggest_square(struct Square *squares)
 {
 	int	max;
@@ -171,7 +162,7 @@ struct Square	find_biggest_square(struct Square *squares)
 		index++;
 	}
 	return (squares[0]);
-}
+}*/
 
 void	write_map(char *str, char full, struct Square square)
 {
@@ -258,8 +249,8 @@ void	handle_file(char *file_name)
 	if (read(file_descriptor, buffer, 1024))
 	{
 		handle_map(buffer);
-		printf("%d\n", line_lengths(buffer));
-		printf("errors : %d\n", errors(buffer));
+		//printf("%d\n", line_lengths(buffer));
+		//printf("errors : %d\n", errors(buffer));
 		//ft_putstr(buffer);
 	}	
 
