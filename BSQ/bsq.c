@@ -194,33 +194,6 @@ void	write_map(char *str, char full, struct Square square, int index)
 	}
 }
 
-void	get_infos(char *map, char *chars, int *length)
-{
-	int	index;
-
-	index = 0;
-	while (map[index] != '\n')
-		index++;
-	chars[2] = map[index - 1];
-	chars[1] = map[index - 2];
-	chars[0] = map[index - 3];
-	index++;
-	length[1] = 0;
-	while (map[index] != '\n')
-	{
-		length[1] += 1;
-		index++;
-	}
-	index++;
-	length[0] = 0;
-	while (map[index])
-	{
-		if (map[index] == '\n')
-			length[0] += 1;
-		index++;
-	}
-}
-
 void	handle_map(char *map)
 {
 	int	length[2];
@@ -266,12 +239,31 @@ void	handle_file(char *file_name, int ac)
 		exit(1);
 }
 
+void	ft_read_stdin(void)
+{
+	char	*out;
+	char	buffer;
+	int		index;
 
+	index = 0;
+	out = (char *)malloc(1024 * 16);
+	if (out == NULL)
+		return ;
+	while (read(0, &buffer, 1))
+	{
+		out[index] = buffer;
+		index++;
+	}
+	handle_map(out);
+	free (out);
+}
 
 int	main(int ac, char **av)
 {
 	int	index;
 
+	if (ac == 1)
+		ft_read_stdin();
 	index = 1;
 	if (ac > 1)
 	{

@@ -50,3 +50,30 @@ char	ft_get_char(char *str, int row, int column)
 	}
 	return ('\0');
 }
+
+void	get_infos(char *map, char *chars, int *length)
+{
+	int	index;
+
+	index = 0;
+	while (map[index] != '\n')
+		index++;
+	chars[2] = map[index - 1];
+	chars[1] = map[index - 2];
+	chars[0] = map[index - 3];
+	index++;
+	length[1] = 0;
+	while (map[index] != '\n')
+	{
+		length[1] += 1;
+		index++;
+	}
+	index++;
+	length[0] = 0;
+	while (map[index])
+	{
+		if (map[index] == '\n')
+			length[0] += 1;
+		index++;
+	}
+}

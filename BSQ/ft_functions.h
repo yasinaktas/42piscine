@@ -7,6 +7,7 @@ void	ft_putchar(char ch, int type);
 void	ft_putstr(char *str, int type);
 int	ft_strlen(char *str);
 char	ft_get_char(char *str, int row, int column);
+void  get_infos(char *map, char *chars, int *length);
 int     ft_control_square(char *str, char empty, int *length, struct Square square);
 void    ft_update_square(char *str, char empty, int *length, struct Square *square);
 struct Square   ft_create_square(char *str, char empty, int *length, int *coord);
