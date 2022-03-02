@@ -32,8 +32,6 @@ void	ft_update_square(char *str, char empty, int *length, struct Square *square)
 		square->control_length = sq_length;
 		if (ft_control_square(str, empty, length, *square))
 			square->length = sq_length;
-		/*else
-			break;*/
 		sq_length++;
 	}
 }
@@ -42,9 +40,6 @@ struct Square	ft_create_square(char *str, char empty, int *length, int *coord)
 {
 	struct Square square;
 
-	//square = *(struct Square *)malloc(sizeof(struct Square) * 4);
-	/*if (square == NULL)
-		return (NULL);*/
 	square.row = coord[0];
 	square.column = coord[1];
 	square.length = 0;

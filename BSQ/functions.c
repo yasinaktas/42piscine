@@ -1,18 +1,18 @@
 #include "ft_square.h"
 
-void	ft_putchar(char ch)
+void	ft_putchar(char ch, int type)
 {
-	write (1, &ch, 1);
+	write (type, &ch, 1);
 }
 
-void	ft_putstr(char *str)
+void	ft_putstr(char *str, int type)
 {
 	int	index;
 
 	index = 0;
 	while (str[index])
 	{
-		ft_putchar(str[index]);
+		ft_putchar(str[index], type);
 		index++;
 	}
 }

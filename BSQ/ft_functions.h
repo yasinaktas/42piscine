@@ -3,8 +3,8 @@
 
 # include "ft_square.h"
 
-void	ft_putchar(char ch);
-void	ft_putstr(char *str);
+void	ft_putchar(char ch, int type);
+void	ft_putstr(char *str, int type);
 int	ft_strlen(char *str);
 char	ft_get_char(char *str, int row, int column);
 int     ft_control_square(char *str, char empty, int *length, struct Square square);
