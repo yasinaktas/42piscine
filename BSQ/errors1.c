@@ -1,4 +1,16 @@
-int     errors2(char *map, char *chars);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   errors1.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yaaktas <yaaktas@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/03 10:14:32 by yaaktas           #+#    #+#             */
+/*   Updated: 2022/03/03 16:25:22 by yaaktas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	errors2(char *map, char *chars);
 
 int	first_line(char *map)
 {
@@ -43,9 +55,37 @@ int	first_line_printable(char *map)
 	return (1);
 }
 
+int	number_check(char *map, int index)
+{
+	int	multiplier;
+	int	number;
+	int	row;
+
+	multiplier = 1;
+	number = 0;
+	row = -1;
+	index = index - 4;
+	while (index >= 0)
+	{
+		number = number + multiplier * (map[index] - 48);
+		multiplier *= 10;
+		index--;
+	}
+	index++;
+	while (map[index])
+	{
+		if (map[index] == '\n')
+			row++;
+		index++;
+	}
+	if (row == number)
+		return (1);
+	return (0);
+}
+
 int	errors(char *map)
 {
-	int	index;
+	int		index;
 	char	chars[3];
 
 	index = 0;
@@ -55,6 +95,8 @@ int	errors(char *map)
 		return (-5);
 	while (map[index] != '\n')
 		index++;
+	if (number_check(map, index) == 0)
+		return (-11);
 	chars[2] = map[index - 1];
 	chars[1] = map[index - 2];
 	chars[0] = map[index - 3];

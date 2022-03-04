@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   functions.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yaaktas <yaaktas@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/03 10:24:03 by yaaktas           #+#    #+#             */
+/*   Updated: 2022/03/03 10:51:36 by yaaktas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_square.h"
 
 void	ft_putchar(char ch, int type)
@@ -69,7 +81,7 @@ void	get_infos(char *map, char *chars, int *length)
 		index++;
 	}
 	index++;
-	length[0] = 0;
+	length[0] = 1;
 	while (map[index])
 	{
 		if (map[index] == '\n')

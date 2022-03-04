@@ -1,60 +1,71 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   square_functions.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yaaktas <yaaktas@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/03 10:33:46 by yaaktas           #+#    #+#             */
+/*   Updated: 2022/03/03 11:26:34 by yaaktas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_square.h"
 
-char    ft_get_char(char *str, int row, int column);
+char	ft_get_char(char *str, int row, int column);
 
-int	ft_control_square(char *str, char empty, struct Square square)
+int	ft_cont_sq(char *str, char empty, struct s_square sq)
 {
 	int	index;
 
 	index = 0;
-	while (index < square.control_length)
+	while (index < sq.control_length)
 	{
-		if (ft_get_char(str,square.row, square.column + index) != empty)
+		if (ft_get_char(str, sq.row, sq.column + index) != empty)
 			return (0);
-		if (ft_get_char(str,square.row + square.length,square.column + index) != empty)
+		if (ft_get_char(str, sq.row + sq.length, sq.column + index) != empty)
 			return (0);
-		if (ft_get_char(str,square.row + index, square.column) != empty)
+		if (ft_get_char(str, sq.row + index, sq.column) != empty)
 			return (0);
-		if (ft_get_char(str,square.row + index, square.column +  square.length) != empty)
+		if (ft_get_char(str, sq.row + index, sq.column + sq.length) != empty)
 			return (0);
 		index++;
 	}
 	return (1);
 }
 
-void	ft_update_square(char *str, char empty, int *length, struct Square *square)
+void	ft_up_sq(char *str, char empty, int *length, struct s_square *sq)
 {
-	int	sq_length;
+	int	sq_len;
 
-	sq_length = 0;
-	while (square->row + sq_length < length[0] && square->column + sq_length < length[1])
+	sq_len = 0;
+	while (sq->row + sq_len <= length[0] && sq->column + sq_len <= length[1])
 	{
-		square->control_length = sq_length;
-		if (ft_control_square(str, empty, *square))
-			square->length = sq_length;
-		sq_length++;
+		sq->control_length = sq_len;
+		if (ft_cont_sq(str, empty, *sq))
+			sq->length = sq_len;
+		sq_len++;
 	}
 }
 
-struct Square	ft_create_square(char *str, char empty, int *length, int *coord)
+struct s_square	ft_create_square(char *str, char empty, int *length, int *coord)
 {
-	struct Square square;
+	struct s_square	square;
 
 	square.row = coord[0];
 	square.column = coord[1];
 	square.length = 0;
 	square.control_length = 0;
 	square.in_loop = 'y';
-	ft_update_square(str,empty, length, &square);
+	ft_up_sq(str, empty, length, &square);
 	return (square);
-}
-		
+}	
 
-struct	Square	*ft_get_squares(char *str, int *length, char empty)
+struct	s_square	*ft_get_squares(char *str, int *length, char empty)
 {
-	int	index;
-	square	*squares;
-	int	coord[2];
+	int			index;
+	t_square	*squares;
+	int			coord[2];
 
 	index = 0;
 	squares = malloc(1024 * 16);
@@ -75,7 +86,7 @@ struct	Square	*ft_get_squares(char *str, int *length, char empty)
 	return (squares);
 }
 
-struct Square	find_biggest_square(struct Square *squares)
+struct s_square	find_biggest_square(struct s_square *squares)
 {
 	int	max;
 	int	index;
