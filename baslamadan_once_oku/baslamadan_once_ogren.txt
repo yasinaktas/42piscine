@@ -1,0 +1,68 @@
+Havuza hoşgeldin.
+Seni çok güzel bir 4 hafta bekliyor.
+Şu anda henüz ne yapacağını bilmiyor olabilirsin.
+Bundan dolayı sana tecrübelerimi aktaracağım.
+
+Öncelike basit terminal komutlarından başlayalım.
+Ekranın altında iTerm iconuna tıkla. Karşına komutları yazabileceğin güzel bir ekran gelecek.
+Tüm işlemlerimizi burada yapacağız. Klasör ve dosyalar oluşturacağız.
+
+Öncelikle oraya pwd yaz ve hangi dizinde olduğunu kontrol et
+Büyük ihtimalle ana dizindesin.
+Şimdi cd desktop yazarak desktop'a git.
+cd komutu klasörlere girmek ve çıkmak için kullanılır.
+Tek başına cd yazarsan ana dizine geri dönersin.
+cd klasör_adi yazarsan o klasöre girersin.
+cd .. yazarsan kkasörden çıkarsın.
+
+Bulunduğun dizinde yeni bir klasör oluşturmak istersen mkdir klasör_ismi komutunu kullanmalısın.
+Bu komutu yazdığında klasör oluşur fakat klasörün içine girmez. Tekrar cd komutu ile içine girmelisin.
+
+İçerisine kod veya bilgi yazabilmek için dosyalara ihtiyacımız var. txt dosyaları gibi düşünebilirsin.
+Bu dosyalar uzantısız olabilir veya ilerleyen zamanlar .c uzantılı olacaklar.
+Dosya oluşturmak için touch dosya_ismi komutunu kullanıyoruz.
+Uzantısı varsa sonuna eklemelisin. Mesela touch dosya_ismi.c gibi.
+Dosyan oluştuktan sonra içerisine yazabilmek için vim dosya_ismi komutuyla dosyanın içine girmelisin.
+Girdikten sonra seni vim ekranı karşılayacak ve bundan sonra bu ekranla çok ama çok içli dışlı olacaksın.
+Bu ekrana geldiğinde yazı yazabilmek için öncelikle klavyendeki İ tuşuna basmalısın.
+Bastıktan sonra altta INSERT yazısını göreceksin. Artık yazı yazabilirsin.
+Yazma işlemin bittikten sonra kaydetmek için esc : w yapmalısın.
+Yazıp çıkmak için esc : w q yapmalısın.
+
+Bunları yaptıktan ve iyice öğrendikten sonra intra profiline gir.
+Sağdan projeler sekmesine gir.
+Alabileceğin tek bir proje var. O da shell00.
+Gir ve kaydol.
+Projenin sayfasına gir.
+Orada bir repo linki çıkacak.
+Projeni o repoya atmak zorundasın. Bunu yapmak çok kolay.
+O linki kopyala.
+Terminalde desktopa gel. (Bunu cd desktop yazarak yapabilirsin).
+Sonra terminaline git clone repo_linki oluşturacağın_klasör_ismi yaz.
+Klasörün oluşacak.
+Shell00 projenin dosyalarını bu klasör içerisinde yapacaksın.
+
+Şimdi shell00 sayfamdan bu projenin ayrıntılarına bakabilirsin.
+Bitirdikten sonra buraya geri dönebilirsin.
+
+En son projen bitince, projeni pushlamalısın.
+Bunun için terminalde bu kalsörünün içerisine gel.
+Terminale git status yaz.
+Oluşturduğun klasör ve dosyalar kırmızı bir şekilde gözükecek.
+Şimdi git add . yaz.
+Şimdi git status yaz.
+Tüm klasör ve dosyaların artık yeşil gözükecek.
+Şimdi git commit -m "commit_mesajın" yaz.
+Ve son olarak git push yaz.
+Artık dosyalarını gönderdin. Bu adımları tekrar tekrar yapabilirsin.
+Projenin bittiğinden eminsen ve pushladıysan, intrada proje sayfasında set finished butonuna tıkla.
+Artık 2 tane defense tarihi seçmelisin.
+Bu zamanlarda, havuzdan iki kişi gelecek ve seni değerlendirecek.
+Korkma bu çok basit ve sürekli olacak bir şey. Sen e başkalarını değerlendirmelisin.
+Intrada Manage slots yazan yere tıkla.
+Boş olduğun zamanları seç ve sistemin sana birilerini göndermesini bekle.
+Sistem sana birilerini atadığı zaman gidip o kişileri değerlendireceksin.
+Bu sayede evo puanların artacak. Evo puanı, değerlendirildiğin zaman azalır. Değerlendirdiğin zaman artar.
+Zamanla projeler zorlaşacak ve evo puanı kasman da zorlaşacak.
+Onun için shell00'da mümkünde en az 10 evo puanı kas.
+Zor değil. Gerekirse 2 3 gününü buna ayır. Havuzun sonunda bana dua edeceksin.
