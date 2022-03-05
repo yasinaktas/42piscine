@@ -1,4 +1,5 @@
 Havuza hoşgeldin.
+Ben Yasin Aktaş -> yaaktas
 Seni çok güzel bir 4 hafta bekliyor.
 Şu anda henüz ne yapacağını bilmiyor olabilirsin.
 Bundan dolayı sana tecrübelerimi aktaracağım.
@@ -13,7 +14,7 @@ Büyük ihtimalle ana dizindesin.
 cd komutu klasörlere girmek ve çıkmak için kullanılır.
 Tek başına cd yazarsan ana dizine geri dönersin.
 cd klasör_adi yazarsan o klasöre girersin.
-cd .. yazarsan kkasörden çıkarsın.
+cd .. yazarsan klasörden çıkarsın.
 
 Bulunduğun dizinde yeni bir klasör oluşturmak istersen mkdir klasör_ismi komutunu kullanmalısın.
 Bu komutu yazdığında klasör oluşur fakat klasörün içine girmez. Tekrar cd komutu ile içine girmelisin.
@@ -58,11 +59,11 @@ Artık dosyalarını gönderdin. Bu adımları tekrar tekrar yapabilirsin.
 Projenin bittiğinden eminsen ve pushladıysan, intrada proje sayfasında set finished butonuna tıkla.
 Artık 2 tane defense tarihi seçmelisin.
 Bu zamanlarda, havuzdan iki kişi gelecek ve seni değerlendirecek.
-Korkma bu çok basit ve sürekli olacak bir şey. Sen e başkalarını değerlendirmelisin.
+Korkma bu çok basit ve sürekli olacak bir şey. Sen de başkalarını değerlendirmelisin.
 Intrada Manage slots yazan yere tıkla.
 Boş olduğun zamanları seç ve sistemin sana birilerini göndermesini bekle.
 Sistem sana birilerini atadığı zaman gidip o kişileri değerlendireceksin.
 Bu sayede evo puanların artacak. Evo puanı, değerlendirildiğin zaman azalır. Değerlendirdiğin zaman artar.
 Zamanla projeler zorlaşacak ve evo puanı kasman da zorlaşacak.
-Onun için shell00'da mümkünde en az 10 evo puanı kas.
+Onun için shell00'da mümkünse en az 10 evo puanı kas.
 Zor değil. Gerekirse 2 3 gününü buna ayır. Havuzun sonunda bana dua edeceksin.
